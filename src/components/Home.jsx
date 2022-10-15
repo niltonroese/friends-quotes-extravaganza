@@ -1,16 +1,16 @@
 import React from "react";
 import Header from './Header';
 import Footer from './Footer';
-import MainContent from './MainContent';
+import HomeContent from './HomeContent';
 
-function HomePage() {
+function Home() {
   return (
    <div>
     <Header />
-    <MainContent />
+    <HomeContent />
     <Footer />
    </div>
   );
 }
 
-export default HomePage;
+export default Home;

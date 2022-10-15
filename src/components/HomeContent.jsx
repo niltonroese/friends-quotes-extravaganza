@@ -1,13 +1,12 @@
-import React from "react";
-import LogoCouch from "../images/LogoCouch.png";
-import HowWell from "../images/HowWell.jpeg";
+import React from 'react'
+import LogoCouch1 from "../images/LogoCouch1.jpeg";
 
-function MainContent() {
+function HomeContent() {
   return (
     <div>
+      <div>
       <img
-        src={LogoCouch}
-        // src={HowWell}
+        src={LogoCouch1}
         className="img-fluid"
         alt="Author"
       />
@@ -22,7 +21,8 @@ function MainContent() {
         </figcaption>
       </figure>
     </div>
-  );
+    </div>
+  )
 }
 
-export default MainContent;
+export default HomeContent
