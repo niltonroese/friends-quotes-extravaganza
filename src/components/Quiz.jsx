@@ -1,29 +1,29 @@
-import React, { useEffect, useState } from "react";
-import Header from "./Header";
-import Footer from "./Footer";
+import React, { useEffect, useState } from "react"
+import axios from 'axios'
+import Header from "./Header"
+import Footer from "./Footer"
 
 function Quiz() {
-  const [quotes, setQuotes] = useState([]);
-  const [currentQuote, setCurrentQuote] = useState(0);
+  const [quotes, setQuotes] = useState([])
+  const [currentQuote, setCurrentQuote] = useState(0)
 //   const [showScore, setShowScore] = useState(false)
 
   //fetch quotes
   useEffect(() => {
-    fetch("http://localhost:3001/quotes")
-      .then((resp) => resp.json())
-      .then((json) => {
-        console.log(json);
-        setQuotes(json);
+    axios.get('http://localhost:3001/quotes')
+      .then(res => {
+        console.log(res)
+        setQuotes(res.data)
       })
-      .catch((err) => {
-        console.log(err.message);
-      });
+      .catch(err => {
+        console.log(err.message)
+      })
   }, []);
 
   const handleAnswerButtonClick = () => {
     const nextQuote = currentQuote + 1;
     if (nextQuote < quotes.length) {
-      setCurrentQuote(nextQuote);
+      setCurrentQuote(nextQuote)
     } else {
       alert("end of quiz")
     }
