@@ -10,13 +10,13 @@ function HomeContent() {
         className="img-fluid"
         alt="Author"
       />
-      <figure class="text-center">
-        <blockquote class="blockquote">
+      <figure className="text-center">
+        <blockquote className="blockquote">
           <p>
             "Look at me! I'm Chandler! Could I be wearing any more clothes?"
           </p>
         </blockquote>
-        <figcaption class="blockquote-footer">
+        <figcaption className="blockquote-footer">
           Joey
         </figcaption>
       </figure>
