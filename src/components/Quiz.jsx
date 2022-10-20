@@ -32,17 +32,19 @@ function Quiz() {
   return (
     <div>
       <Header />
-      <div className="container-fluid text-center">
-        <span>Quote 1/{quotes.length}</span>
-        <div>{quotes[currentQuote].quote}</div>
-        <div>
-          {quotes[currentQuote].answers.map((a) => (
-            <button onClick={handleAnswerButtonClick} key={a.id}>
-              {a}
-            </button>
-          ))}
+      {quotes?.length && (
+        <div className='container-fluid text-center'>
+          <span>Quote 1/{quotes.length}</span>
+          <div>{quotes[currentQuote].quote}</div>
+          <div>
+            {quotes[currentQuote].answers.map((a) => (
+              <button onClick={handleAnswerButtonClick} key={a}>
+                {a}
+              </button>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
       <Footer />
     </div>
   );
