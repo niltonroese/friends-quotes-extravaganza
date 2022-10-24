@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { Link, Outlet } from "react-router-dom";
 import axios from "axios";
 import Header from "./Header";
 import Footer from "./Footer";
 // import shuffle from "lodash/shuffle";
+import Friends_colorful from "../images/Friends_colorful.png";
 
 function useQuiz() {
   const [quotes, setQuotes] = useState([]);
@@ -52,15 +54,27 @@ function Quiz() {
   };
 
   return (
-    <div>
+    <div className="text-center">
       <Header />
+      <br />
       {showScore ? (
         <div className="container-fluid text-center">
           <h4>Quiz Complete</h4>
           <p>
             You've nailed {score} out of {quotes.length} quotes
           </p>
-          <button onClick={onRestartButtonClick}>Give it another Go!</button>
+          <button
+            type="button"
+            className="btn btn-info mb-3"
+            onClick={onRestartButtonClick}
+          >
+            Give it another Go!
+          </button>
+          <p>Or</p>
+          <Link className="link-primary" to="/FavoriteQuote">
+            Add your favorite Quote!
+          </Link>
+          <Outlet />
         </div>
       ) : (
         <>
@@ -74,6 +88,8 @@ function Quiz() {
               <div>
                 {quotes[currentQuote].answers.map((answer, index) => (
                   <button
+                    type="button"
+                    class="btn btn-info"
                     onClick={() =>
                       handleAnswerButtonClick(
                         index,
@@ -90,6 +106,16 @@ function Quiz() {
           )}
         </>
       )}
+      <div>
+        <br />
+        <img
+          src={Friends_colorful}
+          className="img-fluid"
+          alt="Author"
+          height={681}
+          width={523}
+        />
+      </div>
       <Footer />
     </div>
   );

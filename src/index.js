@@ -11,6 +11,8 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import Characters from './components/Characters';
 import Quiz from './components/Quiz';
+import Login from './components/Login';
+import FavoriteQuote from './components/FavoriteQuote';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -19,6 +21,8 @@ root.render(
       <Route path="/" element={<App />} />
       <Route path="/Characters" element={<Characters />} />
       <Route path="/Quiz" element={<Quiz />} />
+      <Route path="/Login" element={<Login />} />
+      <Route path="/FavoriteQuote" element={<FavoriteQuote />} />
   </Routes>
   </BrowserRouter>
 );
