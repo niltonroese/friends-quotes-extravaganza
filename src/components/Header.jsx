@@ -3,7 +3,7 @@ import { Link, Outlet } from "react-router-dom";
 
 function Header() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-primary ">
+    <nav className="navbar sticky-top navbar-expand-lg navbar-dark bg-primary ">
       <div className="container-fluid">
         <div className="col-8 text-center">
           <span className="navbar-text">FRIENDS QUOTES EXTRAVAGANZA</span>
