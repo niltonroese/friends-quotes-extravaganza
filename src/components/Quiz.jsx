@@ -4,30 +4,23 @@ import axios from "axios";
 import Header from "./Header";
 import Footer from "./Footer";
 // import shuffle from "lodash/shuffle";
-import Friends_colorful from "../images/Friends_colorful.png";
-
-function useQuiz() {
-  const [quotes, setQuotes] = useState([]);
-
-  const fetchQuotes = () => {
-    axios
-      .get("http://localhost:3001/quotes")
-      .then((res) => {
-        console.log(res);
-        setQuotes(res.data);
-      })
-      .catch((err) => {
-        console.log(err.message);
-      });
-  };
-  return [quotes, fetchQuotes];
-}
+import Friends_colorful_yellow from "../images/Friends_colorful_yellow.png";
 
 function Quiz() {
-  const [quotes, fetchQuotes] = useQuiz();
+  const [quotes, setQuotes] = useState();
   const [currentQuote, setCurrentQuote] = useState(0);
   const [showScore, setShowScore] = useState(false);
   const [score, setScore] = useState(0);
+
+  const fetchQuotes = async () => {
+    try {
+      const res = await axios.get("http://localhost:3001/quotes");
+      console.log(res);
+      setQuotes(res.data);
+    } catch (err) {
+      alert(err.message);
+    }
+  };
 
   //fetch quotes
   useEffect(() => {
@@ -56,14 +49,19 @@ function Quiz() {
   return (
     <div className="text-center">
       <Header />
-      <div className="jumbotron jumbotron-fluid text-center mt-3">
+      <div className="jumbotron jumbotron-fluid text-center mt-3 mb-4">
         <div className="container">
-          <h1 className="display-5">Quiz me!</h1>
+          <h1 className="display-6">Quiz me!</h1>
         </div>
       </div>
-      <div className="container">
+      <div className="container d-flex justify-content-center" >
         <div className="row">
-          <div className="col-12">
+          <div className="col-12" style={{
+                border: '11px solid #9C8CD4',  
+                borderRadius:'10px',
+                width: 'auto',        
+                boxSizing: 'border-box'
+              }}>
             {/* <div className="card"> */}
             {showScore ? (
               <div className="container-fluid text-center">
@@ -88,15 +86,14 @@ function Quiz() {
               <>
                 {quotes?.length && (
                   <div className="container-fluid text-center">
-                    <h4>
+                    <h4 className="lead fs-4 mt-3 mb-3">
                       Quote {currentQuote + 1}/{quotes.length}
                     </h4>
-                    <div>{quotes[currentQuote].quote}</div>
-                    <br />
+                    <p className="lead ">{quotes[currentQuote].quote}</p>
                     <div>
                       <button
                         type="button"
-                        className="btn btn-info"
+                        className="btn btn-info m-1"
                         value="Chandler"
                         onClick={(e) =>
                           handleAnswerButtonClick(
@@ -105,11 +102,11 @@ function Quiz() {
                           )
                         }
                       >
-                        Chandler
+                        Chandler 
                       </button>
                       <button
                         type="button"
-                        className="btn btn-info"
+                        className="btn btn-info m-1"
                         value="Monica"
                         onClick={(e) =>
                           handleAnswerButtonClick(
@@ -122,7 +119,7 @@ function Quiz() {
                       </button>
                       <button
                         type="button"
-                        className="btn btn-info"
+                        className="btn btn-info m-1"
                         value="Joey"
                         onClick={(e) =>
                           handleAnswerButtonClick(
@@ -135,7 +132,7 @@ function Quiz() {
                       </button>
                       <button
                         type="button"
-                        className="btn btn-info"
+                        className="btn btn-info m-1"
                         value="Phoebe"
                         onClick={(e) =>
                           handleAnswerButtonClick(
@@ -148,7 +145,7 @@ function Quiz() {
                       </button>
                       <button
                         type="button"
-                        className="btn btn-info"
+                        className="btn btn-info m-1"
                         value="Ross"
                         onClick={(e) =>
                           handleAnswerButtonClick(
@@ -161,7 +158,7 @@ function Quiz() {
                       </button>
                       <button
                         type="button"
-                        className="btn btn-info"
+                        className="btn btn-info m-1"
                         value="Rachel"
                         onClick={(e) =>
                           handleAnswerButtonClick(
@@ -180,12 +177,12 @@ function Quiz() {
             <div>
               <br />
               <img
-                src={Friends_colorful}
+                src={Friends_colorful_yellow}
                 className="img-fluid"
                 alt="Author"
-                height={681}
-                width={523}
-              />
+                height={357}
+                width={716}
+              /><br /><br />
             </div>
             {/* </div> */}
           </div>
@@ -198,120 +195,3 @@ function Quiz() {
 }
 
 export default Quiz;
-
-// function useQuiz() {
-//     const [quotes, setQuotes] = useState([]);
-
-//     const fetchQuotes = () => {
-//       axios
-//         .get("http://localhost:3001/quotes")
-//         .then((res) => {
-//           console.log(res);
-//           setQuotes(res.data);
-//         })
-//         .catch((err) => {
-//           console.log(err.message);
-//         });
-//     };
-
-//     return [quotes, fetchQuotes];
-//   }
-
-//   function Quiz() {
-//     const [quotes, fetchQuotes] = useQuiz();
-//     const [currentQuote, setCurrentQuote] = useState(0);
-//     const [showScore, setShowScore] = useState(false);
-//     const [score, setScore] = useState(0);
-
-//     //fetch quotes
-//     useEffect(() => {
-//       fetchQuotes()
-//     }, []);
-
-//     const handleAnswerButtonClick = (answerIndex, correctAnswerIndex) => {
-//       if (answerIndex === correctAnswerIndex) {
-//         setScore((curr) => curr + 1);
-//       }
-//       const nextQuote = currentQuote + 1;
-//       if (nextQuote < quotes.length) {
-//         setCurrentQuote(nextQuote);
-//       } else {
-//         setShowScore(true);
-//       }
-//     };
-
-//     const onRestartButtonClick = async () => {
-//       await fetchQuotes();
-//       setTimeout(() => setShowScore(false), 500);
-//       setCurrentQuote(0);
-//     };
-
-//     return (
-//       <div className="text-center">
-//         <Header />
-//         <br />
-//         {showScore ? (
-//           <div className="container-fluid text-center">
-//             <h4>Quiz Complete</h4>
-//             <p>
-//               You've nailed {score} out of {quotes.length} quotes
-//             </p>
-//             <button
-//               type="button"
-//               className="btn btn-info mb-3"
-//               onClick={onRestartButtonClick}
-//             >
-//               Give it another Go!
-//             </button>
-//             <p>Or</p>
-//             <Link className="link-primary" to="/FavoriteQuote">
-//               Help us to increase our quotes database, add one here!
-//             </Link>
-//             <Outlet />
-//           </div>
-//         ) : (
-//           <>
-//             {quotes?.length && (
-//               <div className="container-fluid text-center">
-//                 <h4>
-//                   Quote {currentQuote + 1}/{quotes.length}
-//                 </h4>
-//                 <div>{quotes[currentQuote].quote}</div>
-//                 <br />
-//                 <div>
-//                   {quotes[currentQuote].answers.map((answer, index) => (
-//                     <button
-//                       type="button"
-//                       className="btn btn-info"
-//                       onClick={() =>
-//                         handleAnswerButtonClick(
-//                           index,
-//                           quotes[currentQuote].correctAnswerIndex
-//                         )
-//                       }
-//                       key={index}
-//                     >
-//                       {answer}
-//                     </button>
-//                   ))}
-//                 </div>
-//               </div>
-//             )}
-//           </>
-//         )}
-//         <div>
-//           <br />
-//           <img
-//             src={Friends_colorful}
-//             className="img-fluid"
-//             alt="Author"
-//             height={681}
-//             width={523}
-//           />
-//         </div>
-//         <Footer />
-//       </div>
-//     );
-//   }
-
-//   export default Quiz;

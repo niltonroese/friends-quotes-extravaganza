@@ -1,7 +1,11 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
 
 function Header() {
+    const { user, isAuthenticated } = useAuth0();
+    const { logout } = useAuth0();
+
   return (
     <nav className="navbar sticky-top navbar-expand-lg navbar-dark bg-primary ">
       <div className="container-fluid">
@@ -27,9 +31,16 @@ function Header() {
                 </Link>
               </li>
               <li className="nav-item">
+              {isAuthenticated ? (
+                <>
+                    <img className="text-info me-2 mb-1" style={{borderRadius:'50px'}} height={40} width={40} src={user.picture} alt={user.name} />
+                    <button type="button" className="btn btn-outline-info btn-sm" onClick={() => logout({ returnTo: window.location.origin })}>Log Out</button>
+                </>
+              ) : (
                 <Link className="nav-link" to="/Login">
-                  Login
+                  Log In
                 </Link>
+              )}
               </li>
             </ul>
           </div>

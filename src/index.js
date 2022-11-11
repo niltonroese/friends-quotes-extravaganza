@@ -13,18 +13,25 @@ import Characters from './components/Characters';
 import Quiz from './components/Quiz';
 import Login from './components/Login';
 import FavoriteQuote from './components/FavoriteQuote';
+import { Auth0Provider } from "@auth0/auth0-react";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <BrowserRouter>
-  <Routes>
-      <Route path="/" element={<App />} />
-      <Route path="/Characters" element={<Characters />} />
-      <Route path="/Quiz" element={<Quiz />} />
-      <Route path="/Login" element={<Login />} />
-      <Route path="/FavoriteQuote" element={<FavoriteQuote />} />
-  </Routes>
-  </BrowserRouter>
+  <Auth0Provider
+    domain="dev-31xgflva.us.auth0.com"
+    clientId="H2Pv9OXOPbkNt2xGpJh8aMw0uMCNd4Fm"
+    redirectUri={window.location.origin}
+    >
+    <BrowserRouter>
+      <Routes>
+          <Route path="/" element={<App />} />
+          <Route path="/Characters" element={<Characters />} />
+          <Route path="/Quiz" element={<Quiz />} />
+          <Route path="/Login" element={<Login />} />
+          <Route path="/FavoriteQuote" element={<FavoriteQuote />} />
+      </Routes>
+    </BrowserRouter>
+  </Auth0Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function
