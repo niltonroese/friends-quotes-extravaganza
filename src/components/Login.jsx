@@ -11,7 +11,7 @@ function Login() {
     <div>
       <Header />
       <div className="container-fluid text-center mt-3">
-        <h1 className="display-6">Log in to your account</h1>
+        <h1 className="display-6">Log in/Sign up for Quiz and more!</h1>
         <button
           type="button"
           className="btn btn-info m-4"

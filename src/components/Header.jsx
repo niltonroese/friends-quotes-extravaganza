@@ -26,9 +26,17 @@ function Header() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/Quiz">
-                  Quiz
-                </Link>
+                {isAuthenticated ? (
+                    <>
+                     <Link className="nav-link" to="/Quiz">
+                        Quiz
+                    </Link>
+                    </>
+                ) : (
+                    <Link className="nav-link" to="/Login">
+                        Quiz
+                    </Link>
+                )}
               </li>
               <li className="nav-item">
               {isAuthenticated ? (

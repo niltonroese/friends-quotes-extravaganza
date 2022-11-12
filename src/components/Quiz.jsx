@@ -56,17 +56,12 @@ function Quiz() {
       </div>
       <div className="container d-flex justify-content-center" >
         <div className="row">
-          <div className="col-12" style={{
-                border: '11px solid #9C8CD4',  
-                borderRadius:'10px',
-                width: 'auto',        
-                boxSizing: 'border-box'
-              }}>
-            {/* <div className="card"> */}
+          <div className="col-12">
+            <div className="card">
             {showScore ? (
               <div className="container-fluid text-center">
-                <h4>Quiz Complete</h4>
-                <p>
+                <h4 className="lead fs-4 mt-3">Quiz Complete</h4>
+                <p className="lead">
                   You've nailed {score} out of {quotes.length} quotes
                 </p>
                 <button
@@ -76,9 +71,9 @@ function Quiz() {
                 >
                   Give it another Go!
                 </button>
-                <p>Or</p>
-                <Link className="link-primary" to="/FavoriteQuote">
-                  Help us to increase our quotes database, add one here!
+                <p className="lead">Or</p>
+                <Link className="link-primary lead" to="/FavoriteQuote">
+                  Help us to increase our quotes database...add yours here!
                 </Link>
                 <Outlet />
               </div>
@@ -89,7 +84,7 @@ function Quiz() {
                     <h4 className="lead fs-4 mt-3 mb-3">
                       Quote {currentQuote + 1}/{quotes.length}
                     </h4>
-                    <p className="lead ">{quotes[currentQuote].quote}</p>
+                    <p className="lead">{quotes[currentQuote].quote}</p>
                     <div>
                       <button
                         type="button"
@@ -184,7 +179,7 @@ function Quiz() {
                 width={716}
               /><br /><br />
             </div>
-            {/* </div> */}
+            </div>
           </div>
         </div>
       </div>

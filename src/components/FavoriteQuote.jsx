@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import axios from "axios";
 import Friends_Caricature2 from "../images/Friends_Caricature2.jpg";
 import { useNavigate } from "react-router-dom";
+import PopUp from "./PopUp";
 
 function FavoriteQuote() {
   const navigate = useNavigate();
@@ -11,6 +12,16 @@ function FavoriteQuote() {
     quote: "",
     answer: "",
   });
+  const [showPopUp, setShowPopUp] = useState(false);
+
+  const showPopupHandler = () => setShowPopUp(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowPopUp(false);
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, [showPopUp]);
 
   const handleChange = (e) => {
     setFormData({
@@ -20,7 +31,6 @@ function FavoriteQuote() {
   };
 
   const handleSubmit = (e) => {
-    alert("Thanks for playing!");
     e.preventDefault();
     axios
       .post("http://localhost:3001/quotes", formData)
@@ -29,7 +39,7 @@ function FavoriteQuote() {
         setFormData();
       })
       .catch((err) => console.log(err.message));
-      navigate("/");
+    setTimeout(() => navigate("/"), 3000);
   };
 
   return (
@@ -39,7 +49,7 @@ function FavoriteQuote() {
       <form className="container-fluid text-center" onSubmit={handleSubmit}>
         <label htmlFor="quote">Quote:</label>
         <input
-        className="mx-2"
+          className="mx-2"
           type="text"
           name="quote"
           value={formData.quote}
@@ -47,7 +57,7 @@ function FavoriteQuote() {
         />
         <label htmlFor="answer">Character:</label>
         <select
-        className="mx-2"
+          className="mx-2"
           type="text"
           name="answer"
           value={formData.answer}
@@ -61,17 +71,27 @@ function FavoriteQuote() {
           <option value="Phoebe">Phoebe</option>
         </select>
         <br />
-        <button type="submit" className="btn btn-info mt-3">
+        <button
+          type="submit"
+          onClick={showPopupHandler}
+          className="btn btn-info mt-3"
+        >
           Submit
         </button>
         <br />
-        <img
-          src={Friends_Caricature2}
-          className="img-fluid mt-4"
-          alt="Author"
-          height={681}
-          width={523}
-        />
+        {showPopUp ? (
+          <div className="mt-4"> 
+            <PopUp />
+          </div>
+        ) : (
+          <img
+            src={Friends_Caricature2}
+            className="img-fluid mt-4"
+            alt="Author"
+            height={681}
+            width={523}
+          />
+        )}
       </form>
       <Footer />
     </div>
