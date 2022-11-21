@@ -1,6 +1,4 @@
 import React from "react";
-import Header from './Header';
-import Footer from './Footer';
 import Thanks2 from "../images/Thanks2.png";
 
 function PopUp() {

@@ -13,6 +13,7 @@ import Characters from './components/Characters';
 import Quiz from './components/Quiz';
 import Login from './components/Login';
 import FavoriteQuote from './components/FavoriteQuote';
+import Leaderboard from './components/Leaderboard';
 import { Auth0Provider } from "@auth0/auth0-react";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -29,6 +30,7 @@ root.render(
           <Route path="/Quiz" element={<Quiz />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/FavoriteQuote" element={<FavoriteQuote />} />
+          <Route path="/Leaderboard" element={<Leaderboard />} />
       </Routes>
     </BrowserRouter>
   </Auth0Provider>

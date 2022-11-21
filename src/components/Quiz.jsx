@@ -5,13 +5,23 @@ import Header from "./Header";
 import Footer from "./Footer";
 // import shuffle from "lodash/shuffle";
 import Friends_colorful_yellow from "../images/Friends_colorful_yellow.png";
+import { useAuth0 } from "@auth0/auth0-react";
 
 function Quiz() {
   const [quotes, setQuotes] = useState();
   const [currentQuote, setCurrentQuote] = useState(0);
   const [showScore, setShowScore] = useState(false);
   const [score, setScore] = useState(0);
+  const { user, isAuthenticated } = useAuth0();
+  const current_username = user.name
+    const current_useremail = user.email
+  const [scoreData, setScoreData] = useState({
+    name: current_username,
+    email: current_useremail,
+    score: score
+  });
 
+  //Fetch quotes
   const fetchQuotes = async () => {
     try {
       const res = await axios.get("http://localhost:3001/quotes");
@@ -22,10 +32,26 @@ function Quiz() {
     }
   };
 
-  //fetch quotes
+  //Get quotes
   useEffect(() => {
     fetchQuotes();
   }, []);
+
+  const fetchScores = async () => {
+    try {
+      const res = await axios.post("http://localhost:3001/userscores", scoreData);
+      console.log(res);
+      setScoreData(res.data);
+    } catch (err) {
+      alert(err.message);
+    }
+  };
+
+//  Post scores
+  useEffect(() => {
+    fetchScores();
+  }, [showScore]);
+
 
   const handleAnswerButtonClick = (value, answer) => {
     if (value === answer) {

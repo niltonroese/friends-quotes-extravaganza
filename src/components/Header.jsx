@@ -41,7 +41,16 @@ function Header() {
               <li className="nav-item">
               {isAuthenticated ? (
                 <>
-                    <img className="text-info me-2 mb-1" style={{borderRadius:'50px'}} height={40} width={40} src={user.picture} alt={user.name} />
+                    <Link className="nav-link" to="/Leaderboard">Scores</Link>
+                </>
+              ) : (
+                null
+              )}
+                </li>
+              <li className="nav-item">
+              {isAuthenticated ? (
+                <>
+                    <img className="text-info me-2 mb-1" style={{borderRadius:'50px'}} height={40} width={40} src={user.picture} alt={user.email} />
                     <button type="button" className="btn btn-outline-info btn-sm" onClick={() => logout({ returnTo: window.location.origin })}>Log Out</button>
                 </>
               ) : (
