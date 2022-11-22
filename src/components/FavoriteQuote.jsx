@@ -36,7 +36,7 @@ function FavoriteQuote() {
       .post("http://localhost:3001/quotes", formData)
       .then((res) => {
         console.log(res);
-        setFormData();
+        setFormData(res.data);
       })
       .catch((err) => console.log(err.message));
     setTimeout(() => navigate("/"), 3000);

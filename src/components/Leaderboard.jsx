@@ -34,9 +34,9 @@ function Leaderboard() {
       {scoreboard?.length && (
         <div className="container d-flex justify-content-center">
           <div className="card lead text-center text-white">
-            <div className="row">
+            <div className="row small">
               <div className="col-4">
-                <img src={Smelly_cat} class="img-fluid" alt="cafe" style={{borderRadius: "5px 0 0 5px"}}/>
+                <img src={Smelly_cat} className="img-fluid" alt="cafe" style={{borderRadius: "5px 0 0 5px"}}/>
               </div>
               <div className="col-4" style={{
                         backgroundColor: "#9C8CD4"

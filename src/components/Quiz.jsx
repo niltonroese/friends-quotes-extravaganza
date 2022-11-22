@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Link, Outlet } from "react-router-dom";
+import React, { useEffect, useState} from "react";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Header from "./Header";
 import Footer from "./Footer";
@@ -12,14 +12,12 @@ function Quiz() {
   const [currentQuote, setCurrentQuote] = useState(0);
   const [showScore, setShowScore] = useState(false);
   const [score, setScore] = useState(0);
-  const { user, isAuthenticated } = useAuth0();
+  const {user} = useAuth0();
   const current_username = user.name
-    const current_useremail = user.email
-  const [scoreData, setScoreData] = useState({
-    name: current_username,
-    email: current_useremail,
-    score: score
-  });
+  const current_useremail = user.email
+  const [name, setName] = useState(current_username)
+  const [email, setEmail] = useState(current_useremail)
+  const navigate = useNavigate();
 
   //Fetch quotes
   const fetchQuotes = async () => {
@@ -37,21 +35,14 @@ function Quiz() {
     fetchQuotes();
   }, []);
 
-  const fetchScores = async () => {
+  const saveScore = async () => {
     try {
-      const res = await axios.post("http://localhost:3001/userscores", scoreData);
+      const res = await axios.post("http://localhost:3001/userscores", {name, email, score});
       console.log(res);
-      setScoreData(res.data);
     } catch (err) {
       alert(err.message);
     }
   };
-
-//  Post scores
-  useEffect(() => {
-    fetchScores();
-  }, [showScore]);
-
 
   const handleAnswerButtonClick = (value, answer) => {
     if (value === answer) {
@@ -70,6 +61,11 @@ function Quiz() {
     setTimeout(() => setShowScore(false), 500);
     setCurrentQuote(0);
     setTimeout(() => setScore(0), 500);
+  };
+
+  const scoreClick = async () => {
+    await saveScore();
+    navigate('/Leaderboard')
   };
 
   return (
@@ -96,6 +92,13 @@ function Quiz() {
                   onClick={onRestartButtonClick}
                 >
                   Give it another Go!
+                </button><br />
+                <button
+                  type="button"
+                  className="btn btn-danger mb-3"
+                  onClick={scoreClick}
+                >
+                  Submit score!
                 </button>
                 <p className="lead">Or</p>
                 <Link className="link-primary lead" to="/FavoriteQuote">
