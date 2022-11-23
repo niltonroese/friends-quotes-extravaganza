@@ -41,7 +41,7 @@ function Header() {
               <li className="nav-item">
               {isAuthenticated ? (
                 <>
-                    <Link className="nav-link" to="/Leaderboard">Scores</Link>
+                    <Link className="nav-link" to="/Leaderboard">Leaderboard</Link>
                 </>
               ) : (
                 null
