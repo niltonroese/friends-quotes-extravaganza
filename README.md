@@ -34,26 +34,26 @@ https://github.com/niltonroese/friends-quotes-database/blob/main/README.md
 
 Home
 
-![](../../../../Desktop/Screen%20Shot%202022-11-23%20at%2012.55.35%20pm.png)
+![Screen Shot 2022-11-23 at 12 55 35 pm](https://user-images.githubusercontent.com/98724149/203471526-9d64430b-0d43-4208-b4ce-482739cce95f.png)
 
 Log in
 
-![](../../../../Desktop/Screen%20Shot%202022-11-23%20at%201.03.52%20pm.png)
+![Screen Shot 2022-11-23 at 1 03 52 pm](https://user-images.githubusercontent.com/98724149/203471558-1c92b10d-56d2-4548-9f40-182d490cc733.png)
 
 Characters
 
-![](../../../../Desktop/Screen%20Shot%202022-11-23%20at%201.04.22%20pm.png)
+![Screen Shot 2022-11-23 at 1 04 22 pm](https://user-images.githubusercontent.com/98724149/203471585-bf7e35ce-1bf6-4bba-80e3-2a63b2371220.png)
 
 Quiz
 
-![](../../../../Desktop/Screen%20Shot%202022-11-23%20at%201.00.25%20pm.png)
+![Screen Shot 2022-11-23 at 1 00 25 pm](https://user-images.githubusercontent.com/98724149/203471608-ff11f337-7c4b-4788-b36c-eec32472affc.png)
 
 Favorite Quote
 
-![](../../../../Desktop/Screen%20Shot%202022-11-23%20at%201.01.14%20pm.png)
+![Screen Shot 2022-11-23 at 1 01 14 pm](https://user-images.githubusercontent.com/98724149/203471625-da3813ff-09eb-4692-9fde-205e1ff189cb.png)
 
 Leaderboard
 
-![](../../../../Desktop/Screen%20Shot%202022-11-23%20at%202.27.52%20pm.png)
+![Screen Shot 2022-11-23 at 2 27 52 pm](https://user-images.githubusercontent.com/98724149/203471644-ca0d9c2c-fb4b-4962-ad11-548100191236.png)
 
 # friends_quotes_extravaganza
