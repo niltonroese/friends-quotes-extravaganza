@@ -34,7 +34,7 @@ https://github.com/niltonroese/friends-quotes-database/blob/main/README.md
 
 Home
 
-![Screen Shot 2022-11-23 at 12 55 35 pm](https://user-images.githubusercontent.com/98724149/203471526-9d64430b-0d43-4208-b4ce-482739cce95f.png)
+![Screen Shot 2022-11-23 at 2 52 39 pm](https://user-images.githubusercontent.com/98724149/203471827-be589352-6331-4c04-a2bb-a1adebf2dbc1.png)
 
 Log in
 
