@@ -1,5 +1,5 @@
 import React, { useEffect, useState} from "react";
-import { Link, Outlet, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Header from "./Header";
 import Footer from "./Footer";
@@ -100,11 +100,6 @@ function Quiz() {
                 >
                   Submit score!
                 </button>
-                <p className="lead">Or</p>
-                <Link className="link-primary lead" to="/FavoriteQuote">
-                  Help us to increase our quotes database...add yours here!
-                </Link>
-                <Outlet />
               </div>
             ) : (
               <>

@@ -41,6 +41,15 @@ function Header() {
               <li className="nav-item">
               {isAuthenticated ? (
                 <>
+                    <Link className="nav-link" to="/FavoriteQuote">Quotes</Link>
+                </>
+              ) : (
+                null
+              )}
+                </li>
+              <li className="nav-item">
+              {isAuthenticated ? (
+                <>
                     <Link className="nav-link" to="/Leaderboard">Leaderboard</Link>
                 </>
               ) : (

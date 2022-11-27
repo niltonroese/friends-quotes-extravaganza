@@ -45,7 +45,7 @@ function FavoriteQuote() {
   return (
     <div>
       <Header />
-      <h1 className="display-6 text-center m-3">Add Quote</h1>
+      <h1 className="display-6 text-center m-3">Help us to increase our database!</h1>
       <form className="container-fluid text-center" onSubmit={handleSubmit}>
         <label htmlFor="quote">Quote:</label>
         <input
