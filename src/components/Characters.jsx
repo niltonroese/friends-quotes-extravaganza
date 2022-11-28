@@ -66,18 +66,18 @@ function Characters() {
                         Chandler
                       </h5>
                     </FrontSide>
-                    <BackSide
+                    <BackSide className="text-center"
                       style={{
                         backgroundColor: "lightseagreen",
                         cursor: "pointer",
                       }}
                     >
                       {" "}
-                      <div className="text-white">
-                        <h4 className="text-center mb-3">{bio[2].name}</h4>
-                        <p>Date of Birth: {bio[2].date_of_birth}</p>
-                        <p>Occupation: {bio[2].occupation}</p>
-                        <p>Traits: {bio[2].traits}</p>
+                      <div className="card-img-overlay">
+                            <h4 className="card-text text-white mt-3 mb-4">{bio[2].name}</h4>
+                            <p>Date of Birth: {bio[2].date_of_birth}</p>
+                            <p>Occupation: {bio[2].occupation}</p>
+                            <p>Traits: {bio[2].traits}</p>
                       </div>
                     </BackSide>
                   </Flippy>
@@ -105,15 +105,15 @@ function Characters() {
                         Monica
                       </h5>
                     </FrontSide>
-                    <BackSide
+                    <BackSide className="text-center"
                       style={{
                         backgroundColor: "lightcoral",
                         cursor: "pointer",
                       }}
                     >
                       {" "}
-                      <div className="text-white">
-                        <h4 className="text-center mb-3">{bio[1].name}</h4>
+                      <div className="card-img-overlay">
+                        <h4 className="card-text text-white mt-3 mb-4">{bio[1].name}</h4>
                         <p>Date of Birth: {bio[1].date_of_birth}</p>
                         <p>Occupation: {bio[1].occupation}</p>
                         <p>Traits: {bio[1].traits}</p>
@@ -140,15 +140,15 @@ function Characters() {
                         Joey
                       </h5>
                     </FrontSide>
-                    <BackSide
+                    <BackSide className="text-center"
                       style={{
                         backgroundColor: "yellowgreen",
                         cursor: "pointer",
                       }}
                     >
                       {" "}
-                      <div className="text-white">
-                        <h4 className="text-center mb-3">{bio[4].name}</h4>
+                      <div className="card-img-overlay">
+                        <h4 className="card-text text-white mt-3 mb-4">{bio[4].name}</h4>
                         <p>Date of Birth: {bio[4].date_of_birth}</p>
                         <p>Occupation: {bio[4].occupation}</p>
                         <p>Traits: {bio[4].traits}</p>
@@ -183,15 +183,15 @@ function Characters() {
                         Phoebe
                       </h5>
                     </FrontSide>
-                    <BackSide
+                    <BackSide className="text-center"
                       style={{
                         backgroundColor: "rgb(210, 148, 158)",
                         cursor: "pointer",
                       }}
                     >
                       {" "}
-                      <div className="text-white">
-                        <h4 className="text-center mb-3">{bio[5].name}</h4>
+                      <div className="card-img-overlay">
+                        <h4 className="card-text text-white mt-3 mb-4">{bio[5].name}</h4>
                         <p>Date of Birth: {bio[5].date_of_birth}</p>
                         <p>Occupation: {bio[5].occupation}</p>
                         <p>Traits: {bio[5].traits}</p>
@@ -218,15 +218,15 @@ function Characters() {
                         Ross
                       </h5>
                     </FrontSide>
-                    <BackSide
+                    <BackSide className="text-center"
                       style={{
                         backgroundColor: "rgb(2, 117, 216)",
                         cursor: "pointer",
                       }}
                     >
                       {" "}
-                      <div className="text-white">
-                        <h4 className="text-center mb-3">{bio[0].name}</h4>
+                      <div className="card-img-overlay">
+                        <h4 className="card-text text-white mt-3 mb-4">{bio[0].name}</h4>
                         <p>Date of Birth: {bio[0].date_of_birth}</p>
                         <p>Occupation: {bio[0].occupation}</p>
                         <p>Traits: {bio[0].traits}</p>
@@ -257,15 +257,15 @@ function Characters() {
                         Rachel
                       </h5>
                     </FrontSide>
-                    <BackSide
+                    <BackSide className="text-center"
                       style={{
                         backgroundColor: "rgb(194, 3, 3)",
                         cursor: "pointer",
                       }}
                     >
                       {" "}
-                      <div className="text-white">
-                        <h4 className="text-center mb-3">{bio[3].name}</h4>
+                      <div className="card-img-overlay">
+                        <h4 className="card-text text-white mt-3 mb-4">{bio[3].name}</h4>
                         <p>Date of Birth: {bio[3].date_of_birth}</p>
                         <p>Occupation: {bio[3].occupation}</p>
                         <p>Traits: {bio[3].traits}</p>

@@ -6,7 +6,7 @@ import HomeContent from './HomeContent';
 function Home() {
   return (
    <div>
-    <Header />
+    <Header/>
     <HomeContent />
     <Footer />
    </div>
