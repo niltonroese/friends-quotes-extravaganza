@@ -3,7 +3,6 @@ import axios from "axios";
 import Header from "./Header";
 import Footer from "./Footer";
 import Smelly_cat from "../images/Smelly_cat.jpg";
-import Central_Perk_couch from "../images/Central_Perk_couch.jpeg";
 
 function Leaderboard() {
   const [scoreboard, setScoreboard] = useState([]);

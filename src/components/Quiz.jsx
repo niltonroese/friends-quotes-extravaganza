@@ -1,5 +1,5 @@
 import React, { useEffect, useState} from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Header from "./Header";
 import Footer from "./Footer";
@@ -15,8 +15,8 @@ function Quiz() {
   const {user} = useAuth0();
   const current_username = user.name
   const current_useremail = user.email
-  const [name, setName] = useState(current_username)
-  const [email, setEmail] = useState(current_useremail)
+  const [name] = useState(current_username)
+  const [email] = useState(current_useremail)
   const navigate = useNavigate();
 
   //Fetch quotes
@@ -100,6 +100,11 @@ function Quiz() {
                 >
                   Submit score!
                 </button>
+                <p className="lead">Or</p>
+                <Link className="link-primary lead" to="/FavoriteQuote">
+                  Help us to increase our quotes database...add yours here!
+                </Link>
+                <Outlet />
               </div>
             ) : (
               <>
