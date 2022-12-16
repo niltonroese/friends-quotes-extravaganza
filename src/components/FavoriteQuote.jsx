@@ -19,7 +19,7 @@ function FavoriteQuote() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowPopUp(false);
-    }, 1500);
+    }, 2000);
     return () => clearTimeout(timer);
   }, [showPopUp]);
 
@@ -39,7 +39,7 @@ function FavoriteQuote() {
         setFormData(res.data);
       })
       .catch((err) => console.log(err.message));
-    setTimeout(() => navigate("/"), 1000);
+    setTimeout(() => navigate("/"), 1500);
   };
 
   return (

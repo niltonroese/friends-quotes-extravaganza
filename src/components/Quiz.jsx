@@ -100,11 +100,6 @@ function Quiz() {
                 >
                   Submit score!
                 </button>
-                <p className="lead">Or</p>
-                <Link className="link-primary lead" to="/FavoriteQuote">
-                  Help us to increase our quotes database...add yours here!
-                </Link>
-                <Outlet />
               </div>
             ) : (
               <>
